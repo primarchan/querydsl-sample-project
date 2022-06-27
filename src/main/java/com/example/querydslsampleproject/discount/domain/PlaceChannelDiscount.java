@@ -1,6 +1,5 @@
 package com.example.querydslsampleproject.discount.domain;
 
-import com.amazonaws.services.ec2.model.Reservation;
 import com.example.querydslsampleproject.common.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
@@ -29,9 +28,10 @@ public class PlaceChannelDiscount extends BaseTimeEntity implements Serializable
 
     private Long policyNo;
 
-    @ManyToOne
-    @JoinColumn(name = "reservation_id")
-    private Reservation reservation;
+    // todo - Reservation Reference가 정상적으로 연결되어 있지않음.
+    //@ManyToOne
+    //@JoinColumn(name = "reservation_id")
+    //private Reservation reservation;
 
     @Builder
     public PlaceChannelDiscount(BigDecimal discountAmount, Long policyNo, String policyName) {
